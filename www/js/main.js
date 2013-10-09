@@ -5,9 +5,10 @@ $('#instagramFeed').on('pageinit', function() {
 	// Instagram API
 	
 	// get variable from textbox
-		$("#instaButton").click(function() {
+		$("#instaButton").on("click", function() {
 			var tag = $("#hashtag").val();
 			console.log(tag);
+			// hi
 		});
 	
 	var url = "https://api.instagram.com/v1/tags/" + tag + "/media/recent?callback=?&amp;client_id=9a4423b4dfdd4111a73d4bd39082f519&amp;count=12";
