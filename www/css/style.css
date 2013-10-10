@@ -1,6 +1,37 @@
 @charset "UTF-8";
 /* CSS Document */
 
+ul {
+	list-style-type:none;
+}
+
 .centered {
 	text-align:center;
+}
+
+@media only screen and (max-width: 555px), only screen and (max-device-width: 555px) {
+/*@media screen and (max-width:555px)  {*/
+	
+	#instagram {
+		color:#0F0 !important;
+	}
+	
+}
+
+@media only screen and (max-width: 850px), only screen and (max-device-width: 850px) {
+/*@media screen and (max-width:850px)  {*/
+	
+	#instagram {
+		color:#00F !important;
+	}
+	
+}
+
+@media only screen and (max-width: 1200px), only screen and (max-device-width: 1200px) {
+/*@media screen and (max-width:1200px)  {*/
+	
+	#instagram {
+		color:#F00;
+	}
+	
 }
