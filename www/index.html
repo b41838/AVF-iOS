@@ -27,6 +27,7 @@
 		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
 		<link rel="shortcut icon" href="/favicon.ico" />
 		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
 	</head>
 
 	<body><!-- Starting content section of code -->
@@ -229,22 +230,26 @@
 
 			<section data-role="content">
             
-            	<input name="hashtag" id="hashtag" type="text"><a id="instaButton" data-role="button" data-inline="true" onclick="getFeed();">Hit it up!</a>
+            	<input name="hashtag" id="hashtag" type="text"><a id="instaButton" data-role="button" data-inline="true" onClick="getVar();">Hit it up!</a>
             
-            	<section class="twitter_feed"></section>
-            </section>
+           		<h2 id="instagramStatus">Searching Instagram...</h2>
+                <ul id="pullFeed" class="ui-grid-b ui-responsive">
+                </ul>
             
-            <section data-role="footer" data-position="fixed" data-id="footNav">
-				<section data-role="navbar">
-					<ul data-filter="true">
-						<li><a href="#qr" data-icon="check">Hunt</a></li>
-						<li><a href="#compass" data-icon="grid">Compass</a></li>
-						<li><a href="#flick" data-icon="check">Flick</a></li>
-					</ul>
-				</section>
-			</section>
+                <section data-role="footer" data-position="fixed" data-id="footNav">
+                    <section data-role="navbar">
+                        <ul data-filter="true">
+                            <li><a href="#qr" data-icon="check">Hunt</a></li>
+                            <li><a href="#compass" data-icon="grid">Compass</a></li>
+                            <li><a href="#flick" data-icon="check">Flick</a></li>
+                        </ul>
+                    </section>
+                </section>
+        
+        	</section>
         
         </section>
+       
         
         <section data-role="page" id="qr" data-theme="c" data-add-back-btn="true">
 
@@ -255,7 +260,14 @@
 			</section>
 
 			<section data-role="content">
-            	Mark it down!
+            	<section id="wrapper">
+                    Click the allow button to let the browser find your location.
+                    
+                    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+                        <article>
+                    
+                        </article>
+                </section>
             </section>
             
             <section data-role="footer" data-position="fixed" data-id="footNav">
