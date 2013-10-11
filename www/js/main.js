@@ -49,7 +49,7 @@ $('#geo').on('pageinit', function() {
 		
 		var coords = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 		
-		var options = {
+		var options = { 
 			zoom: 15,
 			center: coords,
 			mapTypeControl: false,
@@ -73,6 +73,6 @@ $('#geo').on('pageinit', function() {
 	if (navigator.geolocation) {
 		navigator.geolocation.getCurrentPosition(success);
 	} else {
-		error('Geo Location is not supported');
+		error('Geolocation is not supported');
 	}
 });

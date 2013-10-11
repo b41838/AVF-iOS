@@ -9,29 +9,43 @@ ul {
 	text-align:center;
 }
 
-@media only screen and (max-width: 555px), only screen and (max-device-width: 555px) {
-/*@media screen and (max-width:555px)  {*/
+@media screen and (min-width:1px)  {
 	
 	#instagram {
-		color:#0F0 !important;
+		color:#0F0;
+	}
+	
+	#myMap {
+		height:400px;
+		width:600px;
+		padding:0 auto;
 	}
 	
 }
 
-@media only screen and (max-width: 850px), only screen and (max-device-width: 850px) {
-/*@media screen and (max-width:850px)  {*/
+@media screen and (min-width:556px)  {
 	
 	#instagram {
-		color:#00F !important;
+		color:#00F;
 	}
 	
-}
+	#myMap {
+		height:536px;
+		width:800px;
+		padding:0 auto;
+	}
+	
+} 
 
-@media only screen and (max-width: 1200px), only screen and (max-device-width: 1200px) {
-/*@media screen and (max-width:1200px)  {*/
+@media screen and (min-width:850px)  {
 	
 	#instagram {
 		color:#F00;
 	}
 	
+	#myMap {
+		height:670px;
+		width:1000px;
+		padding:0 auto;
+	}
 }
