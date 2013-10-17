@@ -43,7 +43,7 @@
 			<section data-role="content">
                 <ul data-role="listview" data-inset="true">
                     <li>
-                        <a href="#err">
+                        <a href="#accel">
                             <h3>Accelerometer</h3>
                             <p>Going to have accelerometer functionality to assist with compass and geolocation.</p>
                         </a>
@@ -157,7 +157,7 @@
 			</section>
 
 			<section data-role="content" data-theme="c" data-add-back-btn="true">
-            	Cop a flick.
+                <p id="deviceProperties">Loading device properties...</p>
             </section>
             
             <section data-role="footer" data-position="fixed" data-id="footNav">
@@ -267,6 +267,30 @@
 
 			<section data-role="content">
 				Mark it down!
+            </section>
+            
+            <section data-role="footer" data-position="fixed" data-id="footNav">
+				<section data-role="navbar">
+					<ul data-filter="true">
+						<li><a href="#qr" data-icon="check" class="ui-btn-active ui-state-persist">Hunt</a></li>
+						<li><a href="#compass" data-icon="grid">Compass</a></li>
+						<li><a href="#flick" data-icon="check">Flick</a></li>
+					</ul>
+				</section>
+			</section>
+        
+        </section>
+        
+                <section data-role="page" id="accel" data-theme="c" data-add-back-btn="true">
+
+			<section data-role="header">
+				<header>
+                	<h2 class="centered">Accelerometer</h2>
+				</header>
+			</section>
+
+			<section data-role="content">
+				<div id="accelerometer">Waiting for accelerometer...</div>
             </section>
             
             <section data-role="footer" data-position="fixed" data-id="footNav">

@@ -1,5 +1,21 @@
 // JavaScript Document
 
+// The watch id references the current `watchAcceleration`
+    var watchID = null;
+	
+document.addEventListener("deviceready", onDeviceReady, false);
+
+// device APIs are available
+function onDeviceReady() {
+	console.log("Lets do this");
+	$('flick').on('click,', getData);
+	$('geo').on('pageinit,', getGeo);
+	$('accel').on('pageinit,', getAccel);
+	startWatch();
+	
+	
+}
+	
 $('#instagramFeed').on('pageinit', function() {
 
 	// Instagram API
@@ -92,3 +108,48 @@ $('#geo').on('pageinit', function() {
 			  'message: ' + error.message + '\n');
 	};
 });
+
+var getAccel = function(acceleration) {
+	startWatch();
+	
+    // Start watching the acceleration
+    function startWatch() {
+
+        // Update acceleration every 3 seconds
+        var options = { frequency: 3000 };
+
+        watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
+    }
+
+    // Stop watching the acceleration
+    function stopWatch() {
+        if (watchID) {
+            	navigator.accelerometer.clearWatch(watchID);
+            watchID = null;
+        }
+    }
+
+    // onSuccess: Get a snapshot of the current acceleration
+    function onSuccess(acceleration) {
+        var element = document.getElementById('accelerometer');
+        element.innerHTML = 'Acceleration X: ' + acceleration.x         + '<br />' +
+                            'Acceleration Y: ' + acceleration.y         + '<br />' +
+                            'Acceleration Z: ' + acceleration.z         + '<br />' +
+                            'Timestamp: '      + acceleration.timestamp + '<br />';
+    }
+
+    // onError: Failed to get the acceleration
+    function onError() {
+        alert('onError!');
+    }
+};
+
+var getInfo = function() {
+		var element = document.getElementById('deviceProperties');
+        element.innerHTML = 'Device Name: '     + device.name     + '<br />' +
+                            'Device Cordova: '  + device.cordova  + '<br />' +
+                            'Device Platform: ' + device.platform + '<br />' +
+                            'Device UUID: '     + device.uuid     + '<br />' +
+                            'Device Model: '    + device.model    + '<br />' +
+                            'Device Version: '  + device.version  + '<br />';
+    }
