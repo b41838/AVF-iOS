@@ -157,7 +157,12 @@
 			</section>
 
 			<section data-role="content" data-theme="c" data-add-back-btn="true">
-                <p id="deviceProperties">Loading device properties...</p>
+                <button onclick="capturePhoto();">Capture Photo</button> <br>
+                <button onclick="capturePhotoEdit();">Capture Editable Photo</button> <br>
+                <button onclick="getPhoto(pictureSource.PHOTOLIBRARY);">From Photo Library</button><br>
+                <button onclick="getPhoto(pictureSource.SAVEDPHOTOALBUM);">From Photo Album</button><br>
+                <img style="display:none;width:60px;height:60px;" id="smallImage" src="" />
+                <img style="display:none;" id="largeImage" src="" />
             </section>
             
             <section data-role="footer" data-position="fixed" data-id="footNav">
@@ -181,7 +186,7 @@
 			</section>
 
 			<section data-role="content">
-            	Where are you going?
+	            <div id="heading">Waiting for heading...</div>
             </section>
             
             <section data-role="footer" data-position="fixed" data-id="footNav">
@@ -281,7 +286,7 @@
         
         </section>
         
-                <section data-role="page" id="accel" data-theme="c" data-add-back-btn="true">
+        <section data-role="page" id="accel" data-theme="c" data-add-back-btn="true">
 
 			<section data-role="header">
 				<header>

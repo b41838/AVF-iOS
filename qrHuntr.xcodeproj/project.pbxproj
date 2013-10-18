@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		1D3623260D0F684500981E51 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* AppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
@@ -48,6 +47,9 @@
 		CDEAB6C030AA4838A5879B46 /* CDVAccelerometer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E84B6DE0BBF45F9B3F0E27B /* CDVAccelerometer.m */; };
 		D4A0D8761607E02300AEF8BB /* Default-568h@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = D4A0D8751607E02300AEF8BB /* Default-568h@2x~iphone.png */; };
 		F840E1F1165FE0F500CFE078 /* config.xml in Resources */ = {isa = PBXBuildFile; fileRef = F840E1F0165FE0F500CFE078 /* config.xml */; };
+		1C2D10C5750342E28C983750 /* CDVCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = EFBA8A00678843ABB1E6BF9D /* CDVCamera.m */; };
+		D1EACA4D811347D39AE3DE5F /* CDVJpegHeaderWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7130889D7C0642EAB524B07C /* CDVJpegHeaderWriter.m */; };
+		A3A4465E744147BABEC9FBCD /* CDVCompass.m in Sources */ = {isa = PBXBuildFile; fileRef = 28CC81E1E08C4E3FACC5052E /* CDVCompass.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +121,13 @@
 		F413BDEC895346C3BF944B18 /* CDVDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVDevice.m; path = org.apache.cordova.device/CDVDevice.m; sourceTree = "<group>"; };
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = qrHuntr/config.xml; sourceTree = "<group>"; };
 		FE047332BC234BA6A48B23A1 /* CDVAccelerometer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVAccelerometer.h; path = "org.apache.cordova.device-motion/CDVAccelerometer.h"; sourceTree = "<group>"; };
+		EFBA8A00678843ABB1E6BF9D /* CDVCamera.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVCamera.m"; path = "org.apache.cordova.camera/CDVCamera.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		7130889D7C0642EAB524B07C /* CDVJpegHeaderWriter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVJpegHeaderWriter.m"; path = "org.apache.cordova.camera/CDVJpegHeaderWriter.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		690A3A3F688E4DB88861691B /* CDVCamera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVCamera.h"; path = "org.apache.cordova.camera/CDVCamera.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		40DBF9DC27614E4798E3CF67 /* CDVJpegHeaderWriter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVJpegHeaderWriter.h"; path = "org.apache.cordova.camera/CDVJpegHeaderWriter.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		4443E592940940C9AA8737A6 /* CDVExif.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVExif.h"; path = "org.apache.cordova.camera/CDVExif.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		28CC81E1E08C4E3FACC5052E /* CDVCompass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVCompass.m"; path = "org.apache.cordova.device-orientation/CDVCompass.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		8E482C02CB354B4086EA62BC /* CDVCompass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVCompass.h"; path = "org.apache.cordova.device-orientation/CDVCompass.h"; sourceTree = "<group>"; fileEncoding = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -270,6 +279,13 @@
 				FE047332BC234BA6A48B23A1 /* CDVAccelerometer.h */,
 				F413BDEC895346C3BF944B18 /* CDVDevice.m */,
 				268275C227D842CE8AD9C147 /* CDVDevice.h */,
+				EFBA8A00678843ABB1E6BF9D /* CDVCamera.m */,
+				7130889D7C0642EAB524B07C /* CDVJpegHeaderWriter.m */,
+				690A3A3F688E4DB88861691B /* CDVCamera.h */,
+				40DBF9DC27614E4798E3CF67 /* CDVJpegHeaderWriter.h */,
+				4443E592940940C9AA8737A6 /* CDVExif.h */,
+				28CC81E1E08C4E3FACC5052E /* CDVCompass.m */,
+				8E482C02CB354B4086EA62BC /* CDVCompass.h */,
 			);
 			name = Plugins;
 			path = qrHuntr/Plugins;
@@ -344,7 +360,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0460;
+				LastUpgradeCheck = 460;
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "qrHuntr" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -440,6 +456,9 @@
 				2982E6C6E2B34A4F8605CE8A /* CDVLocation.m in Sources */,
 				CDEAB6C030AA4838A5879B46 /* CDVAccelerometer.m in Sources */,
 				7C2D56C2DAC14014B7F5FE7E /* CDVDevice.m in Sources */,
+				1C2D10C5750342E28C983750 /* CDVCamera.m in Sources */,
+				D1EACA4D811347D39AE3DE5F /* CDVJpegHeaderWriter.m in Sources */,
+				A3A4465E744147BABEC9FBCD /* CDVCompass.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
