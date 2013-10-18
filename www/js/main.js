@@ -68,7 +68,7 @@ var getFeed = function(info) {
 // GeoLocation
 
 $('#geo').on('pageinit', function() {
-        function success(position) {
+        function geoSuccess(position) {
                 var myMap = document.createElement('section');
                 myMap.id = 'geoMap';
                 myMap.style.height = '400px';
@@ -100,70 +100,15 @@ $('#geo').on('pageinit', function() {
         }
                 
         if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(success);
+                navigator.geolocation.getCurrentPosition(geoSuccess);
         } else {
                 error('Geolocation is not supported');
         }
 });
 
 
-//function success(position) {
-//	var myMap = document.createElement('section');
-//	myMap.id = 'geoMap';
-//	myMap.style.height = '400px';
-//	myMap.style.width = '600px';
-//	
-//	document.querySelector('article').appendChild(myMap);
-//	
-//	var coords = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-//	
-//	var options = { 
-//		zoom: 15,
-//		center: coords,
-//		mapTypeControl: false,
-//		navigationControlOptions: {
-//			style: google.maps.NavigationControlStyle.SMALL
-//	},
-//	
-//	mapTypeId: google.maps.MapTypeId.ROADMAP
-//	
-//	};
-//	
-//	var map = new google.maps.Map(document.getElementById("geoMap"), options);
-//	
-//	var marker = new google.maps.Marker({
-//		position: coords,
-//		map: map,
-//		title:"You are here!"
-//	});
-//}
-//	
-//if (navigator.geolocation) {
-//	navigator.geolocation.getCurrentPosition(success);
-//} else {
-//	error('Geolocation is not supported');
-//}
-//
-//// if successful get latitude and longitude for users current location
-//function geoWin(position) {
-//	var element = document.getElementById('geolocation');
-//	element.innerHTML = 'Latitude: '           + position.coords.latitude           + '<br />' +
-//						'Longitude: '          + position.coords.longitude			+ '<br />';
-//						//'Timestamp: '          + position.timestamp                 + '<br />'
-//}
-//
-//// if fail throw error
-//function geoFail(error) {
-//	alert('code: '    + error.code    + '\n' +
-//		  'message: ' + error.message + '\n');
-//};
-//
-//var getGeo = function() {
-//	navigator.geolocation.getCurrentPosition(geoWin, geoFail);
-//};
-
-
 // Accelerometer
+
 function accelSuccess(acceleration) {
     alert('Acceleration X: ' + acceleration.x + '\n' +
           'Acceleration Y: ' + acceleration.y + '\n' +
@@ -203,6 +148,7 @@ var getComp = function() {
 
 
 // Camera
+
 function onPhotoDataSuccess(imageData) {
       alert(imageData);
 
