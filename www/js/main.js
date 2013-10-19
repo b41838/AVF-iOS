@@ -18,7 +18,7 @@ function onDeviceReady() {
 	
 	pictureSource=navigator.camera.PictureSourceType;
     destinationType=navigator.camera.DestinationType;
-//	$('#flick').on('pageinit', getInfo);
+	$('#device').on('pageinit', getDevice);
 //	$('#geo').on('pageinit', getGeo);
 	$('#compass').on('pageinit', getComp);
 	$('#accel').on('pageinit', getAccel);
@@ -210,14 +210,16 @@ function onFail(message) {
 
 
 
+// Device Info
 
-
-//var getInfo = function() {
-//		var element = document.getElementById('deviceProperties');
-//        element.innerHTML = 'Device Name: '     + device.name     + '<br />' +
-//                            'Device Cordova: '  + device.cordova  + '<br />' +
-//                            'Device Platform: ' + device.platform + '<br />' +
-//                            'Device UUID: '     + device.uuid     + '<br />' +
-//                            'Device Model: '    + device.model    + '<br />' +
-//                            'Device Version: '  + device.version  + '<br />';
-//};
+var getDevice = function() {
+	alert("Lets get some info!");
+	console.log(device.name);
+	var element = document.getElementById('deviceProperties');
+	element.innerHTML = 'Device Name: '     + device.name     + '<br />' +
+						'Device Cordova: '  + device.cordova  + '<br />' +
+						'Device Platform: ' + device.platform + '<br />' +
+						'Device UUID: '     + device.uuid     + '<br />' +
+						'Device Model: '    + device.model    + '<br />' +
+						'Device Version: '  + device.version  + '<br />';
+};

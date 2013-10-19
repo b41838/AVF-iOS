@@ -55,9 +55,9 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#err">
-                            <h3>Capture</h3>
-                            <p>Going to allow players to also capture pictures from the app during their hunt.</p>
+                        <a href="#device">
+                            <h3>Device</h3>
+                            <p>Will get the users basic device information.</p>
                         </a>
                     </li>
                     <li>
@@ -306,6 +306,30 @@
         
         </section>
         
+        <section data-role="page" id="device" data-theme="c" data-add-back-btn="true">
+
+			<section data-role="header">
+				<header>
+                	<h2 class="centered">Device Info</h2>
+				</header>
+			</section>
+
+			<section data-role="content">
+            	<p id="deviceProperties">Fetching Device Info...</p>
+            </section>
+            
+            <section data-role="footer" data-position="fixed" data-id="footNav">
+				<section data-role="navbar">
+					<ul data-filter="true">
+						<li><a href="#qr" data-icon="check">Hunt</a></li>
+						<li><a href="#compass" data-icon="grid">Compass</a></li>
+						<li><a href="#flick" data-icon="check">Flick</a></li>
+					</ul>
+				</section>
+			</section>
+        
+        </section>
+        
         <section data-role="page" id="disc1" data-theme="c" data-add-back-btn="true">
 
 			<section data-role="header">
@@ -353,7 +377,16 @@
 			</section>
 
 			<section data-role="content">
-            	Get it done.
+            	<p><strong>1. What are some of the ways that you could change your HTML  on your Demo app to be more accessible? (Remember, you can use the  Section tag with jQuery, for instance)</strong></p>
+<p>One thing I really need to do better is to use alt tags and set up  navigation to properly tab through.  The simplest way to keep your app  accessible is to make sure that even if a user is using a screen reader,  they can still navigate the page.  I always forget to put alt tags on  images, which are key if you are trying duplicate the user experience  for a person with visual impairments.  Having your navigation be the  first thing parsed makes navigation much easier for people using a  screen reader.</p>
+<p><strong>2. Visit a video service on the web (like YouTube) and search  for &quot;Screen Reader Demo&quot; and &quot;Mobile Screen Reader&quot; - what are some of  the common frustrations (or common support mechanisms) that you see  among the examples that are given - how could you fix them (or use  them)?</strong></p>
+<p>Screen reading technology has come a long ways in the last 10 years  or so but unfortunately web and application developers have not.  The  most common complaint is not the software but the inability for the  software to work correctly.  Developers often forget (or choose to  ignore) the things that I mention in my first answer which really makes  it hard for some users to use a website or application.</p>
+<p><strong>3. Devices: Please list two devices (and some of their features) that are made specifically to support Accessibility.</strong></p>
+<p>Kindle Fire – I was just thinking about reading on the web then  started thinking about reading on a tablet and eventually the Kindle  popped into my head.  Like Google TalkBack and Apple VoiceOver, Kindle  has a built in screen reader called IVONA which (obviously) turns text  to speech.  Kindle also has the ability to use gestures to navigate to  the Home screen, go back, access notifications, the local context menu  and the accessibility settings.  You can also magnify the content, set  font size, turn on closed captioning and toggle between mono and stereo  if you can only hear out of one ear.</p>
+<p>Firefox – Firefox actually has some pretty decent options for  browsing the web.   Everyone knows about Ctrl+ and Ctrl- for zoom in /  zoom out but you can also zoom the text only by going to the View menu  and selecting Zoom &gt; Zoom Text Only or you can install the Page Zoom  Buttons add-on.  You can tell Firefox not to load images so that alt  text is easier read by going to Tools &gt; Options &gt; Content and  uncheck the &ldquo;Load images automatically&rdquo; box.  This is helpful for  developers as well to make sure our alt tags are properly applied to  everything.  You can alsoturn on the &ldquo;Find As You Type&rdquo; feature, which  allows you to start typing after you load a web page and go directly to a  set of key words.  Tools &gt; Options &gt; Advanced &gt; General &gt;  Accessibility and mark the &ldquo;Search for text when I start typing&rdquo; box.   Finally you can use the Browse With the Caret feature to navigate  through web pages the same as you would a word processor.   Enable/Disable this feature by pressing F7.</p>
+<p><strong>4. Mobile Apps: Please list two apps (either Android or iOS, or both) that are made specifically to support Accessibility.</strong></p>
+<p>LookTel (iOS only) – This is sweet!  I never thought about an app for  this, it scans dollar bills and gives you the denomination and supports  21 different currencies.  It both reads you the denomination out loud  and also gives you a large display with the option for high contrast  mode.</p>
+<p>Parking Mobility (iOS only) – An app designed to socially share the  locations of handicapped parking spaces as well as report abuse of said  parking spots.  This sounds pretty cool but I really wonder how many  people use it and actually need to use it.  I use handicapped spots  every day and I don&rsquo;t know if I&rsquo;ve ever had a problem finding them.   Finding an open one is a different story…  The reporting feature is a  little lame though, it has no direct line to ticketing agencies rather  just to local advocate groups.</p>
             </section>
             
             <section data-role="footer" data-position="fixed" data-id="footNav">
