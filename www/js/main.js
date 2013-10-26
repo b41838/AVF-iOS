@@ -20,7 +20,7 @@ function onDeviceReady() {
     destinationType=navigator.camera.DestinationType;
 	$('#device').on('pageinit', getDevice);
 //	$('#geo').on('pageinit', getGeo);
-	$('#compass').on('pageinit', getComp);
+	$('#connection').on('pageinit', getConnection);
 	$('#accel').on('pageinit', getAccel);
 }
 
@@ -28,23 +28,26 @@ function onDeviceReady() {
 	
 $('#instagramFeed').on('pageinit', function() {
 
-	// Instagram API
 });
 
 // Instagram API
 	
 // get variable from textbox
-function getVar() {
-	$("#instagram").on("click", "#instaButton", function() {
-			console.log("hi");
-			var tag = $("#hashtag").val();
-			console.log(tag);
-			
-	var url = "https://api.instagram.com/v1/tags/" + tag + "/media/recent?callback=?&amp;client_id=9a4423b4dfdd4111a73d4bd39082f519&amp;count=12";
-	
-	$.getJSON(url, getFeed);
-	
-	});
+function getVar(connectionType) {
+	if (connectionType != 'No network connection') {
+		$("#instagram").on("click", "#instaButton", function() {
+				console.log("hi");
+				var tag = $("#hashtag").val();
+				console.log(tag);
+				
+		var url = "https://api.instagram.com/v1/tags/" + tag + "/media/recent?callback=?&amp;client_id=9a4423b4dfdd4111a73d4bd39082f519&amp;count=12";
+		
+		$.getJSON(url, getFeed);
+		
+		});
+	} else {
+		alert("No connection found");
+	};
 }
 
 var getFeed = function(info) {
@@ -125,26 +128,26 @@ var getAccel = function() {
 };
 
 
-// Compass
+// Connection
 
-function onSuccess(heading) {
-	alert("success");
-    var element = document.getElementById('heading');
-    element.innerHTML = 'Heading: ' + heading.magneticHeading;
+
+
+var getConnection = function() {
+	alert("fetching connection information..");
+	var connectionType = navigator.connection.type;
+
+	var states = {};
+	states[Connection.UNKNOWN]  = 'Unknown connection';
+	states[Connection.ETHERNET] = 'Ethernet connection';
+	states[Connection.WIFI]     = 'WiFi connection';
+	states[Connection.CELL_2G]  = 'Cell 2G connection';
+	states[Connection.CELL_3G]  = 'Cell 3G connection';
+	states[Connection.CELL_4G]  = 'Cell 4G connection';
+	states[Connection.CELL]     = 'Cell generic connection';
+	states[Connection.NONE]     = 'No network connection';
+
+	alert('Connection type: ' + states[connectionType]);
 };
-
-function onError(compassError) {
-    alert('Compass error: ' + compassError.code);
-};
-
-var options = {
-    frequency: 3000
-}; // Update every 3 seconds
-
-var getComp = function() {
-	alert("compass");
-	var watchID = navigator.compass.watchHeading(onSuccess, onError, options);
-}
 
 
 // Camera
