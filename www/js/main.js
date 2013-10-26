@@ -1,14 +1,10 @@
 // JavaScript Document
 
-// The watch id references the current `watchAcceleration`
-    //var watchID = null;
 	
 // native variables
 var getAccel,
-	//getGeo,
 	pictureSource,
-	destinationType,
-	getCompass;
+	destinationType;
 
 document.addEventListener("deviceready", onDeviceReady, false);
 
@@ -19,7 +15,6 @@ function onDeviceReady() {
 	pictureSource=navigator.camera.PictureSourceType;
     destinationType=navigator.camera.DestinationType;
 	$('#device').on('pageinit', getDevice);
-//	$('#geo').on('pageinit', getGeo);
 	$('#connection').on('pageinit', getConnection);
 	$('#accel').on('pageinit', getAccel);
 }
@@ -33,22 +28,19 @@ $('#instagramFeed').on('pageinit', function() {
 // Instagram API
 	
 // get variable from textbox
-function getVar(connectionType) {
-	if (connectionType != 'No network connection') {
-		$("#instagram").on("click", "#instaButton", function() {
-				console.log("hi");
-				var tag = $("#hashtag").val();
-				console.log(tag);
-				
-		var url = "https://api.instagram.com/v1/tags/" + tag + "/media/recent?callback=?&amp;client_id=9a4423b4dfdd4111a73d4bd39082f519&amp;count=12";
-		
-		$.getJSON(url, getFeed);
-		
-		});
-	} else {
-		alert("No connection found");
-	};
-}
+var getVar = function() {
+	$("#instagram").on("click", "#instaButton", function() {
+
+			console.log("hi");
+			var tag = $("#hashtag").val();
+			console.log(tag);
+			
+	var url = "https://api.instagram.com/v1/tags/" + tag + "/media/recent?callback=?&amp;client_id=9a4423b4dfdd4111a73d4bd39082f519&amp;count=12";
+	
+	$.getJSON(url, getFeed);
+	
+	});
+};
 
 var getFeed = function(info) {
 
@@ -65,7 +57,8 @@ var getFeed = function(info) {
 	$("li:nth-child(3n+1)").addClass("ui-block-a");
 	$("li:nth-child(3n+2)").addClass("ui-block-b");
 	$("li:nth-child(3n+3)").addClass("ui-block-c");
-}; // end screenOutput
+// end screenOutput
+};
 
 
 // GeoLocation
@@ -112,14 +105,14 @@ $('#geo').on('pageinit', function() {
 
 // Accelerometer
 
-function accelSuccess(acceleration) {
+var accelSuccess = function(acceleration) {
     alert('Acceleration X: ' + acceleration.x + '\n' +
           'Acceleration Y: ' + acceleration.y + '\n' +
           'Acceleration Z: ' + acceleration.z + '\n' +
           'Timestamp: '      + acceleration.timestamp + '\n');
 };
 
-function accelError() {
+var accelError = function() {
 	alert("Uh, :x!");
 };
 	
@@ -133,7 +126,6 @@ var getAccel = function() {
 
 
 var getConnection = function() {
-	alert("fetching connection information..");
 	var connectionType = navigator.connection.type;
 
 	var states = {};
@@ -152,8 +144,7 @@ var getConnection = function() {
 
 // Camera
 
-function onPhotoDataSuccess(imageData) {
-      alert(imageData);
+var onPhotoDataSuccess = function(imageData) {
 
       // Get image handle
       var smallImage = document.getElementById('smallImage');
@@ -167,9 +158,7 @@ function onPhotoDataSuccess(imageData) {
 };
 
 // Called when a photo is successfully retrieved
-function onPhotoURISuccess(imageURI) {
-	
-	alert(imageURI);
+var onPhotoURISuccess = function(imageURI) {
 
 	// Get image handle
 	var largeImage = document.getElementById('largeImage');
@@ -183,14 +172,14 @@ function onPhotoURISuccess(imageURI) {
 };
 
 // A button will call this function
-function capturePhoto() {
+var capturePhoto = function() {
 	// Take picture using device camera and retrieve image as base64-encoded string
 	navigator.camera.getPicture(onPhotoDataSuccess, onFail, {
 		quality: 50, destinationType: destinationType.DATA_URL });
 };
 
 // A button will call this function
-function capturePhotoEdit() {
+var capturePhotoEdit = function() {
 	// Take picture using device camera, allow edit, and retrieve image as base64-encoded string
 	navigator.camera.getPicture(onPhotoDataSuccess, onFail, {
 		quality: 20, allowEdit: true, destinationType: destinationType.DATA_URL
@@ -198,7 +187,7 @@ function capturePhotoEdit() {
 };
 
 // A button will call this function
-function getPhoto(source) {
+var getPhoto = function(source) {
 	// Retrieve image file location from specified source
 	navigator.camera.getPicture(onPhotoURISuccess, onFail, {
 		quality: 50, destinationType: destinationType.FILE_URI, sourceType: source 
@@ -206,11 +195,9 @@ function getPhoto(source) {
 };
 
 // Called if something bad happens.
-function onFail(message) {
+var onFail = function(message) {
 	alert('Failed because: ' + message);
 };
-
-
 
 
 // Device Info
